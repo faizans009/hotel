@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+/* Your custom theme (optional) */
+@theme {
+    --color-primary: #3b82f6;
+    --color-secondary: #1e40af;
+}
+
+/* Hide all Google Sign-In auto-rendered buttons */
+.gsi-material,
+.gsi-material button,
+[role="button"][data-text],
+.gsi-button {
+    display: none !important;
+    visibility: hidden !important;
+    width: 0 !important;
+    height: 0 !important;
+    opacity: 0 !important;
+}
+
+#google-button-container {
+    display: none !important;
+}
+
+/* Hide scrollbar for scroll containers */
+#destinations-scroll::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+#destinations-scroll::-webkit-scrollbar-track {
+    display: none !important;
+}
+
+#destinations-scroll::-webkit-scrollbar-thumb {
+    display: none !important;
+}
+
+#destinations-scroll {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none !important;
+    height: 0 !important;
+    width: 0 !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar-track {
+    display: none !important;
+}
+
+.scrollbar-hide::-webkit-scrollbar-thumb {
+    display: none !important;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+}
