@@ -7,37 +7,35 @@ import HotelDetails from "./pages/HotelDetails"
 import Login from "./pages/Login"
 import Signup from "./pages/Signup"
 import OtpVerification from "./pages/OtpVerification"
+import BookingConfirmation from "./pages/BookingConfirmation"
+import PaymentConfirmation from "./pages/PaymentConfirmation"
 import { userAtom } from "./store/atoms"
 import { authAPI } from "./services/api"
 
-/**
- * Debug component to view Jotai state
- * Shows user state in bottom-right corner (like Redux DevTools)
- */
-function DebugState() {
-  const [user] = useAtom(userAtom)
-  return (
-    <div style={{
-      position: 'fixed',
-      bottom: '10px',
-      right: '10px',
-      background: '#1a1a1a',
-      color: '#00ff00',
-      padding: '10px',
-      borderRadius: '5px',
-      fontSize: '11px',
-      fontFamily: 'monospace',
-      zIndex: 9999,
-      maxWidth: '300px',
-      maxHeight: '200px',
-      overflow: 'auto',
-      border: '1px solid #00ff00'
-    }}>
-      <strong>📊 Jotai State:</strong>
-      <pre>{JSON.stringify({ user }, null, 2)}</pre>
-    </div>
-  )
-}
+// function DebugState() {
+//   const [user] = useAtom(userAtom)
+//   return (
+//     <div style={{
+//       position: 'fixed',
+//       bottom: '10px',
+//       right: '10px',
+//       background: '#1a1a1a',
+//       color: '#00ff00',
+//       padding: '10px',
+//       borderRadius: '5px',
+//       fontSize: '11px',
+//       fontFamily: 'monospace',
+//       zIndex: 9999,
+//       maxWidth: '300px',
+//       maxHeight: '200px',
+//       overflow: 'auto',
+//       border: '1px solid #00ff00'
+//     }}>
+//       <strong>📊 Jotai State:</strong>
+//       <pre>{JSON.stringify({ user }, null, 2)}</pre>
+//     </div>
+//   )
+// }
 
 const router = createBrowserRouter([
   {
@@ -47,6 +45,14 @@ const router = createBrowserRouter([
   {
     path: "/hotel-details",
     element: <HotelDetails />,
+  },
+  {
+    path: "/booking-confirmation",
+    element: <BookingConfirmation />,
+  },
+  {
+    path: "/booking/confirmation",
+    element: <PaymentConfirmation />,
   },
   {
     path: "/login",
@@ -84,7 +90,7 @@ function AppWithAuth() {
   return (
     <>
       <RouterProvider router={router} />
-      <DebugState />
+      {/* <DebugState /> */}
     </>
   )
 }
